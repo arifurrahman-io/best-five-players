@@ -22,7 +22,7 @@
 
 <body>
 
-    <header class=" bg-teal-400 grid grid-cols-4">
+    <header class=" bg-teal-400 grid grid-cols-1 lg:grid-cols-4">
         <img class="pt-20" src="./images/player-football.png" alt="">
         <div class="grid content-center items-center col-span-2">
             <h1 class="text-5xl text-white text-center">Select Your Best Five</h1>
@@ -36,7 +36,7 @@
 
     <main>
         <section class="p-5">
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
                 <div class="p-3 border rounded-md">
                     <img src="./images/cr.jpg" alt="">
                     <p class="text-xl text-center">Cristiano Ronaldo</p>
@@ -111,19 +111,19 @@
                     <img class="h-5 mx-auto" src="./images/underline2.png" alt="">
                     <div class="flex justify-between items-center py-3 px-3">
                         <label class="text-xl" for="">Per Player</label>
-                        <input class="p-1" type="text">
+                        <input id="perPlayer-amount" class="p-1" type="text">
                     </div>
-                    <button
+                    <button id="calculate-btn"
                         class="bg-rose-500 w-full text-xl text-white font-semibold rounded-sm px-5 py-2">Calculate</button>
                     <div class="flex justify-between items-center p-2 text-xl">
                         <label for="">Player Expences</label>
-                        <p>$<span>00</span></p>
+                        <p>$<span id="player-exp">00</span></p>
                     </div>
-                    <div class="flex justify-between items-center p-2">
+                    <div class="flex justify-between items-center p-2 w-full">
                         <label class="text-xl" for="">Manager</label>
                         <input class="p-1" type="text">
                     </div>
-                    <div class="flex justify-between items-center p-2">
+                    <div class="flex justify-between items-center p-2 w-full">
                         <label class="text-xl" for="">Coach</label>
                         <input class="p-1" type="text">
                     </div>

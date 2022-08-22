@@ -96,3 +96,38 @@ document.getElementById('karim-btn').addEventListener('click', function () {
         alert('5 Players already selected!')
     }
 })
+
+// const depositField = document.getElementById('deposit-amount');
+//     const newDepositeAmount = depositField.value;
+//     const newDepositAmountNumber = parseFloat(newDepositeAmount);
+
+// const previousDeposite = document.getElementById('total-deposit');
+//     const previousAmount = previousDeposite.innerText;
+//     const previousAmountNumber = parseFloat(previousAmount);
+
+// const balanceElement = document.getElementById('balance');
+// const previousBalance = balanceElement.innerText;
+// const previousBalanceNumber = parseFloat(previousBalance);
+
+// const currentDepositTotal = previousAmountNumber + newDepositAmountNumber;
+
+// const currentBalanceTotal = previousBalanceNumber + newDepositAmountNumber;
+
+// balanceElement.innerText = currentBalanceTotal;
+
+// previousDeposite.innerText = currentDepositTotal;
+
+// depositField.value = '';
+
+document.getElementById('calculate-btn').addEventListener('click', function () {
+    const players = playerList.length;
+    const perPlayerField = document.getElementById('perPlayer-amount');
+    const perPlayerCost = perPlayerField.value;
+    const perPlayerCostFloat = parseFloat(perPlayerCost);
+
+    const expAmount = players * perPlayerCostFloat;
+
+    const expence = document.getElementById('player-exp');
+    expence.innerText = expAmount;
+
+})
