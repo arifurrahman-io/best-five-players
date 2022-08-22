@@ -1,114 +1,136 @@
 const playerList = [];
 
-document.getElementById('cr-btn').addEventListener('click', function () {
-    const playersName = 'Cristiano Ronaldo';
+
+function selectsPlayers(name) {
     const container = document.getElementById('area');
     const li = document.createElement('li');
 
     if (playerList.length < 5) {
-        li.innerText = playersName;
+        li.innerText = name;
         container.appendChild(li);
-        playerList.push(playersName);
-        this.style.background = 'gray';
-        this.disabled = true;
+        playerList.push(name);
+
     } else {
         alert('5 Players already selected!')
     }
+}
+
+function buttonWork(selectionButton) {
+    if (playerList.length < 5) {
+        selectionButton.style.background = 'gray';
+        selectionButton.disabled = true;
+    }
+}
+
+document.getElementById('cr-btn').addEventListener('click', function () {
+    const player = document.getElementById('player1');
+    const playersName = player.innerText;
+    const button = document.getElementById('cr-btn');
+
+    buttonWork(button);
+    selectsPlayers(playersName);
 
 })
 
 document.getElementById('messi-btn').addEventListener('click', function () {
-    const playersName = 'Lionel Messi';
-    const container = document.getElementById('area');
-    const li = document.createElement('li');
+    const player = document.getElementById('player2');
+    const playersName = player.innerText;
+    const button = document.getElementById('messi-btn');
 
-    if (playerList.length < 5) {
-        li.innerText = playersName;
-        container.appendChild(li);
-        playerList.push(playersName);
-        this.style.background = 'gray';
-        this.disabled = true;
-    } else {
-        alert('5 Players already selected!')
-    }
+    buttonWork(button);
+    selectsPlayers(playersName);
+
 })
 
 document.getElementById('salah-btn').addEventListener('click', function () {
-    const playersName = 'Mohammad Salah';
-    const container = document.getElementById('area');
-    const li = document.createElement('li');
+    const player = document.getElementById('player3');
+    const playersName = player.innerText;
+    const button = document.getElementById('salah-btn');
 
-    if (playerList.length < 5) {
-        li.innerText = playersName;
-        container.appendChild(li);
-        playerList.push(playersName);
-        this.style.background = 'gray';
-        this.disabled = true;
-    } else {
-        alert('5 Players already selected!')
-    }
+    buttonWork(button);
+    selectsPlayers(playersName);
+
+
 })
 
 document.getElementById('neymar-btn').addEventListener('click', function () {
-    const playersName = 'Neymar Jr.';
-    const container = document.getElementById('area');
-    const li = document.createElement('li');
+    const player = document.getElementById('player4');
+    const playersName = player.innerText;
+    const button = document.getElementById('neymar-btn');
 
-    if (playerList.length < 5) {
-        li.innerText = playersName;
-        container.appendChild(li);
-        playerList.push(playersName);
-        this.style.background = 'gray';
-        this.disabled = true;
-    } else {
-        alert('5 Players already selected!')
-    }
+    buttonWork(button);
+    selectsPlayers(playersName);
+
+
 })
 
 document.getElementById('mbappe-btn').addEventListener('click', function () {
-    const playersName = 'Kylian Mbappe';
-    const container = document.getElementById('area');
-    const li = document.createElement('li');
+    const player = document.getElementById('player5');
+    const playersName = player.innerText;
+    const button = document.getElementById('mbappe-btn');
 
-    if (playerList.length < 5) {
-        li.innerText = playersName;
-        container.appendChild(li);
-        playerList.push(playersName);
-        this.style.background = 'gray';
-        this.disabled = true;
-    } else {
-        alert('5 Players already selected!')
-    }
+    buttonWork(button);
+    selectsPlayers(playersName);
+
 })
 
 document.getElementById('karim-btn').addEventListener('click', function () {
-    const playersName = 'Karim Benzema';
-    const container = document.getElementById('area');
-    const li = document.createElement('li');
+    const player = document.getElementById('player6');
+    const playersName = player.innerText;
+    const button = document.getElementById('karim-btn');
 
-    if (playerList.length < 5) {
-        li.innerText = playersName;
-        container.appendChild(li);
-        playerList.push(playersName);
-        this.style.background = 'gray';
-        this.disabled = true;
-    } else {
-        alert('5 Players already selected!')
-    }
+    buttonWork(button);
+    selectsPlayers(playersName);
+
 })
 
+document.getElementById('oscar-btn').addEventListener('click', function () {
+    const player = document.getElementById('player7');
+    const playersName = player.innerText;
+    const button = document.getElementById('oscar-btn');
+
+    buttonWork(button);
+    selectsPlayers(playersName);
+
+})
+
+document.getElementById('harry-btn').addEventListener('click', function () {
+    const player = document.getElementById('player8');
+    const playersName = player.innerText;
+    const button = document.getElementById('harry-btn');
+
+    buttonWork(button);
+    selectsPlayers(playersName);
+
+})
+
+document.getElementById('ozil-btn').addEventListener('click', function () {
+    const player = document.getElementById('player9');
+    const playersName = player.innerText;
+    const button = document.getElementById('ozil-btn');
+
+    buttonWork(button);
+    selectsPlayers(playersName);
+
+})
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
+
     const players = playerList.length;
-    const perPlayerField = document.getElementById('perPlayer-amount');
-    const perPlayerCost = perPlayerField.value;
-    const perPlayerCostFloat = parseFloat(perPlayerCost);
-
-    const expAmount = players * perPlayerCostFloat;
-
-    const expence = document.getElementById('player-exp');
-    expence.innerText = expAmount;
-
+    if (players != 0) {
+        const perPlayerField = document.getElementById('perPlayer-amount');
+        const perPlayerCost = perPlayerField.value;
+        const perPlayerCostFloat = parseFloat(perPlayerCost);
+        if (isNaN(perPlayerCostFloat)) {
+            alert('Please Insert Per-Player Cost!!');
+        } else {
+            const expAmount = players * perPlayerCostFloat;
+            const expence = document.getElementById('player-exp');
+            expence.innerText = expAmount;
+        }
+    } else {
+        alert('Please Select Players!');
+    }
 })
 
 
@@ -118,18 +140,24 @@ document.getElementById('total-btn').addEventListener('click', function () {
     const expenceValue = expence.innerText;
     const expenceValueFloat = parseFloat(expenceValue);
 
-    const managerFeeField = document.getElementById('manager-fee');
-    const managerFee = managerFeeField.value;
-    const managerFeeFloat = parseFloat(managerFee);
+    if (expenceValueFloat != '') {
+        const managerFeeField = document.getElementById('manager-fee');
+        const managerFee = managerFeeField.value;
+        const managerFeeFloat = parseFloat(managerFee);
 
-    const coachFeeField = document.getElementById('coach-fee');
-    const coachFee = coachFeeField.value;
-    const coachFeeFloat = parseFloat(coachFee);
+        const coachFeeField = document.getElementById('coach-fee');
+        const coachFee = coachFeeField.value;
+        const coachFeeFloat = parseFloat(coachFee);
 
-    const grandTotal = expenceValueFloat + managerFeeFloat + coachFeeFloat;
-
-    const grandTotalField = document.getElementById('g-total');
-
-    grandTotalField.innerText = grandTotal;
+        if (managerFee != '' && coachFee != '') {
+            const grandTotal = expenceValueFloat + managerFeeFloat + coachFeeFloat;
+            const grandTotalField = document.getElementById('g-total');
+            grandTotalField.innerText = grandTotal;
+        } else {
+            alert('One or More Fields are empty!!')
+        }
+    } else {
+        alert("Player's Information Blank!!")
+    }
 
 })
