@@ -149,12 +149,12 @@ document.getElementById('total-btn').addEventListener('click', function () {
         const coachFee = coachFeeField.value;
         const coachFeeFloat = parseFloat(coachFee);
 
-        if (managerFee != '' && coachFee != '') {
+        if (isNaN(managerFeeFloat) || isNaN(coachFeeFloat)) {
+            alert('One or More Fields are empty!!')
+        } else {
             const grandTotal = expenceValueFloat + managerFeeFloat + coachFeeFloat;
             const grandTotalField = document.getElementById('g-total');
             grandTotalField.innerText = grandTotal;
-        } else {
-            alert('One or More Fields are empty!!')
         }
     } else {
         alert("Player's Information Blank!!")
