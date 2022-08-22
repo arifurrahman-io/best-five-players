@@ -97,27 +97,6 @@ document.getElementById('karim-btn').addEventListener('click', function () {
     }
 })
 
-// const depositField = document.getElementById('deposit-amount');
-//     const newDepositeAmount = depositField.value;
-//     const newDepositAmountNumber = parseFloat(newDepositeAmount);
-
-// const previousDeposite = document.getElementById('total-deposit');
-//     const previousAmount = previousDeposite.innerText;
-//     const previousAmountNumber = parseFloat(previousAmount);
-
-// const balanceElement = document.getElementById('balance');
-// const previousBalance = balanceElement.innerText;
-// const previousBalanceNumber = parseFloat(previousBalance);
-
-// const currentDepositTotal = previousAmountNumber + newDepositAmountNumber;
-
-// const currentBalanceTotal = previousBalanceNumber + newDepositAmountNumber;
-
-// balanceElement.innerText = currentBalanceTotal;
-
-// previousDeposite.innerText = currentDepositTotal;
-
-// depositField.value = '';
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
     const players = playerList.length;
@@ -129,5 +108,28 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
 
     const expence = document.getElementById('player-exp');
     expence.innerText = expAmount;
+
+})
+
+
+
+document.getElementById('total-btn').addEventListener('click', function () {
+    const expence = document.getElementById('player-exp');
+    const expenceValue = expence.innerText;
+    const expenceValueFloat = parseFloat(expenceValue);
+
+    const managerFeeField = document.getElementById('manager-fee');
+    const managerFee = managerFeeField.value;
+    const managerFeeFloat = parseFloat(managerFee);
+
+    const coachFeeField = document.getElementById('coach-fee');
+    const coachFee = coachFeeField.value;
+    const coachFeeFloat = parseFloat(coachFee);
+
+    const grandTotal = expenceValueFloat + managerFeeFloat + coachFeeFloat;
+
+    const grandTotalField = document.getElementById('g-total');
+
+    grandTotalField.innerText = grandTotal;
 
 })
